@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+    - name: staging
+      database: taxi-rides-ny-348613
+      schema: capstone_boardgame_data
+
+      tables:
+        - name: boardgames
+        - name: gamesprices
