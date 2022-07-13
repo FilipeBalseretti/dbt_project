@@ -1,0 +1,6 @@
+version: 2
+
+models:
+  - name: boardgame_years
+    description: >
+      Aggregated table of al boardgames organized by published year
