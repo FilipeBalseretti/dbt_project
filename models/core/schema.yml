@@ -3,4 +3,8 @@ version: 2
 models:
   - name: boardgame_years
     description: >
-      Aggregated table of al boardgames organized by published year
+      Aggregated table of all boardgames organized by published year
+      giving the details about total number of boardgames and percentage
+  - name: boardgame_avg_prices
+    description: >
+      Aggregated table of all boardgames prices organized by price ranges.
