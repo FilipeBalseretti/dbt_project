@@ -37,6 +37,7 @@ select distinct
 from {{ ref('stg_boardgame_data') }} as bg_data
 left join avg_price
 on bg_data.id = avg_price.id
+where bg_data.year_published <= 2022
 )
 select 
     boardgame_data.id,
@@ -45,7 +46,7 @@ select
     boardgame_data.url,
     boardgame_data.rating,
     boardgame_data.num_voters,
-    boardgame_data.year_published,dbt 
+    boardgame_data.year_published, 
     boardgame_data.description,
     boardgame_data.date,
     boardgame_data.stores_total_items,
