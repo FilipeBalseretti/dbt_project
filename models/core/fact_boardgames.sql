@@ -45,7 +45,7 @@ select
     boardgame_data.url,
     boardgame_data.rating,
     boardgame_data.num_voters,
-    boardgame_data.year_published,
+    boardgame_data.year_published,dbt 
     boardgame_data.description,
     boardgame_data.date,
     boardgame_data.stores_total_items,
