@@ -14,6 +14,7 @@
         when 'En stcok' then 'In Stock'
         when 'EN stock' then 'In Stock'
         when 'Disponible' then 'In Stock'
+    else 'TBD'
     end
 
 {%- endmacro %}
