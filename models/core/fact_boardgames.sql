@@ -25,7 +25,7 @@ select distinct
     avg_price.average_price,
     avg_price.max_price,
     avg_price.min_price,
-    ROW_NUMBER() OVER(PARTITION BY bg_data.id, bg_data.date  ORDER BY bg_data.date, bg_data.num_voters DESC) AS RN,
+    ROW_NUMBER() OVER(PARTITION BY bg_data.id  ORDER BY bg_data.date DESC, bg_data.num_voters DESC) AS RN,
     CASE
     when avg_price.average_price BETWEEN 0 AND 15 then '0-15€'
     when avg_price.average_price BETWEEN 16 AND 30 then '16-30€'
@@ -39,7 +39,7 @@ left join avg_price
 on bg_data.id = avg_price.id
 where bg_data.year_published <= 2022
 )
-select 
+select
     boardgame_data.id,
     boardgame_data.name,
     boardgame_data.rank,
@@ -53,7 +53,8 @@ select
     boardgame_data.average_price,
     boardgame_data.min_price,
     boardgame_data.max_price,
-    boardgame_data.price_range
+    boardgame_data.price_range,
+    RN
 from boardgame_data
 where RN = 1
 ORDER BY stores_total_items DESC
